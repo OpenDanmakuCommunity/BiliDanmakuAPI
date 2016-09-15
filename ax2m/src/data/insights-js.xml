@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<insight version="1.0">
+  <f name="trace" type="void" d="添加指定内容至日志中" modifiers="Static">
+    <a name="s" type="String" d="要添加的内容" />
+  </f>
+  <f name="clear" type="void" d="清空日志内容" modifiers="Static">
+  </f>
+  <f name="parseInt" type="Number" d="将字符串转换为整数。如果参数中指定的字符串不能转换为数字，则此函数返回 NaN。以 0x 开头的字符串被解释为十六进制数字。以 0 开头的整数不会被解释为八进制数字。必须指定 8 的基数才能解释为八进制数字。有效整数前面的空白和 0 以及后面的非数字字符将被忽略。" return="一个数字或 NaN（非数字）。" modifiers="Static">
+    <a name="str" type="String" d="要转换为整数的字符串。" />
+    <a name="radix" type="uint" d="表示要分析的数字的基数（基）的整数。合法值为 2 到 36。" default="0" />
+  </f>
+  <f name="parseFloat" type="Number" d="将字符串转换为浮点数。此函数读取或分析 并返回字符串中的数字，直到此函数遇到不是初始数字一部分的字符。如果字符串不是以可以分析的数字开头，parseFloat() 将返回 NaN。有效整数前面的空白将被忽略，有效整数后面的非数字字符也将被忽略。" return="一个数字或 NaN（非数字）。" modifiers="Static">
+    <a name="str" type="String" d="要转换为整数的字符串。" />
+  </f>
+  <f name="timer" type="uint" d="在指定的延迟（以毫秒为单位）后运行指定的函数。" return="超时进程的唯一数字标识符。使用此标识符可通过调用 clearTimeout() 方法取消进程。" modifiers="Static">
+    <a name="closure" type="Function" d="要执行的函数的名称。不要包括引号或圆括号，并且不要指定要调用的函数的参数。例如，使用 functionName，而不要使用 functionName() 或 functionName(param)。" />
+    <a name="delay" type="Number" d="执行函数之前的延迟时间（以毫秒为单位）。" />
+  </f>
+  <f name="interval" type="Timer" d="在指定的延迟（以毫秒为单位）后运行指定的函数。" return="超时进程的唯一标识符。使用此标识符可通过调用 Timer.stop() 方法取消进程。" modifiers="Static">
+    <a name="closure" type="Function" d="要执行的函数的名称。不要包括引号或圆括号，并且不要指定要调用的函数的参数。例如，使用 functionName，而不要使用 functionName() 或 functionName(param)。" />
+    <a name="delay" type="Number" d="间隔（以毫秒为单位）。" />
+    <a name="times" type="Number" d="运行次数。" />
+  </f>
+  <f name="foreach" type="void" d="遍历指定Object" modifiers="Static" remarks="回调函数定义
+function foreachCallback(key : String, value : *) : void;
+====回调函数参数定义====
+key : String : 键值名
+value : * : 值">
+    <a name="loop" type="Object" d="被遍历的Object" />
+    <a name="f" type="Function" d="遍历回调函数" />
+  </f>
+  <f name="clone" type="Object" d="复制指定Object" modifiers="Static" remarks="此功能无法复制函数">
+    <a name="object" type="Object" d="被复制的Object" />
+  </f>
+  <f name="load" type="void" d="加载外部库" modifiers="Static">
+    <a name="library" type="String" d="库名称" />
+    <a name="onComplete" type="Function" d="加载完成时执行的回调函数" />
+  </f>
+</insight>

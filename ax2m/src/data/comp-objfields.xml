@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<completion-lists version="1.0">
+  <!-- 名称必须为"@ObjectFields"，见 DV.ObjectFieldListName。 -->
+  <list name="@ObjectFields" static="true">
+    <item name="x" type="objfield" return="Number" source="通用创建参数" d="新创建元件的X轴座标" />
+    <item name="y" type="objfield" return="Number" source="通用创建参数" d="新创建元件的Y轴座标" />
+    <item name="lifeTime" type="objfield" return="Number" source="通用创建参数" d="元件的生存时间" />
+    <item name="alpha" type="objfield" return="Number" source="通用创建参数" d="元件的透明度" />
+    <item name="color" type="objfield" return="uint" source="通用创建参数" d="文字类元件的色彩" />
+    <item name="fontsize" type="objfield" return="Number" source="通用创建参数" d="文字类元件的大小" />
+    <item name="parent" type="objfield" return="Object" source="通用创建参数" d="元件的父元件 可选 (进阶应用)" />
+    <item name="motion" type="objfield" return="Object" source="通用创建参数" d="元件移动策略 可选" />
+    <item name="rotationX" type="objfield" return="Number" source="通用创建参数" />
+    <item name="rotationY" type="objfield" return="Number" source="通用创建参数" />
+    <item name="rotationZ" type="objfield" return="Number" source="通用创建参数" />
+    <item name="fromValue" type="objfield" return="Object" source="Motion" d="起始移动属性值" />
+    <item name="toValue" type="objfield" return="Object" source="Motion" d="结束移动属性值 如留空则不移动 可选" />
+    <item name="lifeTime" type="objfield" return="Number" source="Motion" d="以秒为单位的移动生存时间 如留空则与整体生存时间一致 可选" />
+    <item name="startDelay" type="objfield" return="Number" source="Motion" d="以毫秒为单位的起始移动延时时间 可选" />
+    <item name="easing" type="objfield" return="Object" source="Motion" d="补间效果 值：None, Back, Bounce, Circular, Cubic, Elastic, Exponential, Sine, Quintic, Linear 可选" />
+    <item name="repeat" type="objfield" return="uint" source="Motion" d="效果重复次数 可选" />
+    <item name="motionGroup" type="objfield" return="Array.&lt;Object&gt;" source="通用创建参数" d="元件移动策略组 可选 此选项填写后motion将失效 此属性为motion数组" />
+  </list>
+</completion-lists>

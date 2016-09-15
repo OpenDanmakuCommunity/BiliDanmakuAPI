@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<insight version="1.0">
+  <!-- Player -->
+  <f name="Player.play" type="void" source="Player" d="开始播放媒体文件" modifiers="Static">
+  </f>
+  <f name="Player.pause" type="void" source="Player" d="暂停视频流的回放。如果视频已经暂停，则调用此方法将不会执行任何操作。要在暂时视频后恢复播放，请调用 play()。" modifiers="Static">
+  </f>
+  <f name="Player.seek" type="void" source="Player" d="搜索与指定位置最接近的关键帧（在视频行业中也称为 I 帧）。关键帧位于从流的开始处算起的偏移位置（以毫秒为单位）。
+视频流通常是使用以下两种类型的帧进行编码的：关键帧（或 I 帧）和 P 帧。关键帧包含完整图像；而 P 帧是一个中间帧，它在两个关键帧之间提供额外的视频信息。通常，视频流每 10 到 50 帧中有一个关键帧。" modifiers="Static">
+    <a name="offset" type="Number" d="要在视频文件中移动到的时间近似值（以毫秒为单位）。" />
+  </f>
+  <f name="Player.jump" type="void" source="Player" d="跳至指定AV号指定页的视频" modifiers="Static">
+    <a name="av" type="String" d="要跳转的视频(如av120040)。" />
+    <a name="page" type="Number" d="要跳转的视频页数。" default="1" />
+    <a name="newWindow" type="Boolean" d="是否打开新窗口进行跳转" default="false" />
+  </f>
+  <f name="Player.commentTrigger" type="uint" source="Player" d="监听发送弹幕" modifiers="Static" remarks="此函数不会因播放器暂停而终止执行。
+回调函数定义
+function commentCallback(cd:CommentData):void;">
+    <a name="f" type="Function" d="发送弹幕时执行的回调函数" />
+    <a name="timeout" type="Number" d="监听超时时间(ms)" default="1000" />
+  </f>
+  <f name="Player.keyTrigger" type="uint" source="Player" d="监听键盘输入" modifiers="Static" remarks="此函数不会因播放器暂停而终止执行
+此函数只能监听数字键盘 0-9 及 上下左右 Home, End, Page UP, Page Down, W, S, A, D
+回调函数定义
+function keyCallback(key:int):void;">
+    <a name="f" type="Function" d="键盘按下时的回调函数" />
+    <a name="timeout" type="Number" d="监听超时时间" default="1000" />
+    <a name="up" type="Boolean" d="是否为监听keyUp事件" default="false" />
+  </f>
+  <f name="Player.setMask" type="void" source="Player" modifiers="Static" d="设置播放器遮罩">
+    <a name="obj" type="DisplayObject" d="作为遮罩的图形对象" />
+  </f>
+  <f name="Player.createSound" type="ScriptSound" source="Player" modifiers="Static" d="建立声音元件">
+    <a name="t" type="String" d="播放声音类型" />
+    <a name="onLoad" type="Function" d="载入完成时的回调函数" default="null" />
+  </f>
+  <!-- Math -->
+  <f name="Math.abs" type="Number" source="Math" modifiers="Static" d="计算并返回由参数 val 指定的数字的绝对值。" return="指定参数的绝对值。">
+    <a name="val" type="Number" d="要返回绝对值的数字。" />
+  </f>
+  <f name="Math.acos" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回由参数 val 指定的数字的反余弦值。" return="参数 val 的反余弦值。">
+    <a name="val" type="Number" d="-1.0 到 1.0 之间的一个数字。" />
+  </f>
+  <f name="Math.asin" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回由参数 val 指定的数字的反正弦值。" return="参数 val 的正余弦值。">
+    <a name="val" type="Number" d="-1.0 到 1.0 之间的一个数字。" />
+  </f>
+  <f name="Math.atan" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回角度值，该角度的正切值已由参数 val 指定。返回值介于负二分之 pi 和正二分之 pi 之间。" return="介于负二分之 pi 和正二分之 pi 之间的一个数字。">
+    <a name="val" type="Number" d="表示角的正切值的一个数字。" />
+  </f>
+  <f name="Math.atan2" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回点 y/x 的角度，该角度从圆的 x 轴（其中，0,0 表示圆心）沿逆时针方向测量。返回值介于正 pi 和负 pi 之间。请注意，atan2 的第一个参数始终是 y 坐标。" return="一个数字。">
+    <a name="y" type="Number" d="该点的 y 坐标。" />
+    <a name="x" type="Number" d="该点的 x 坐标。" />
+  </f>
+  <f name="Math.ceil" type="Number" source="Math" modifiers="Static" d="返回指定数字或表达式的上限值。数字的上限值是大于等于该数字的最接近的整数。" return="最接近且大于等于参数 val 的整数。">
+    <a name="val" type="Number" d="一个数字或表达式。" />
+  </f>
+  <f name="Math.cos" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回指定角度的余弦值。要计算弧度，请参阅 Math 类的概述。" return="-1.0 到 1.0 之间的一个数字。">
+    <a name="angleRadians" type="Number" d="一个数字，它表示一个以弧度为单位的角度。" />
+  </f>
+  <f name="Math.exp" type="Number" source="Math" modifiers="Static" d="返回自然对数的底 (e) 的 x 次幂的值，x 由参数 x 指定。常量 Math.E 可以提供 e 的值。" return="e 的 x 次幂，x 由参数 val 指定。">
+    <a name="val" type="Number" d="指数；一个数字或表达式。" />
+  </f>
+  <f name="Math.floor" type="Number" source="Math" modifiers="Static" d="返回由参数 val 指定的数字或表达式的下限值。下限值是小于等于指定数字或表达式的最接近的整数。" return="最接近且小于等于参数 val 的整数。">
+    <a name="val" type="Number" d="一个数字或表达式。" />
+  </f>
+  <f name="Math.log" type="Number" source="Math" modifiers="Static" d="返回参数 val 的自然对数。" return="参数 val 的自然对数。">
+    <a name="val" type="Number" d="其值大于 0 的数字或表达式。" />
+  </f>
+  <f name="Math.max" type="Number" source="Math" modifiers="Static,Params" d="计算 val1 和 val2（或更多的值）并返回最大值。" return="参数 val1 和 val2（或更多值）的最大值。">
+    <a name="val1" type="Number" d="一个数字或表达式。" />
+    <a name="val2" type="Number" d="一个数字或表达式。" />
+    <a name="... rest" type="Number" d="一个数字或表达式。Math.max() 可以接受多个参数。" modifiers="Hidden" />
+  </f>
+  <f name="Math.min" type="Number" source="Math" modifiers="Static,Params" d="计算 val1 和 val2（或更多的值）并返回最小值。" return="参数 val1 和 val2（或更多值）的最小值。">
+    <a name="val1" type="Number" d="一个数字或表达式。" />
+    <a name="val2" type="Number" d="一个数字或表达式。" />
+    <a name="... rest" type="Number" d="一个数字或表达式。Math.min() 可以接受多个参数。" modifiers="Hidden" />
+  </f>
+  <f name="Math.pow" type="Number" source="Math" modifiers="Static" d="计算并返回 base 的 pow 次幂。" return="base 的 pow 次幂的值。">
+    <a name="base" type="Number" d="将自乘参数 pow 次的数字。" />
+    <a name="pow" type="Number" d="指定参数 base 的自乘次数的数字。" />
+  </f>
+  <f name="Math.random" type="Number" source="Math" modifiers="Static" d="返回一个伪随机数 n，其中 0 &lt;= n &lt; 1。因为该计算不可避免地包含某些非随机的成分，所以返回的数字以保密方式计算且为“伪随机数”。" return="一个伪随机数。">
+  </f>
+  <f name="Math.round" type="Number" source="Math" modifiers="Static" d="将参数 val 的值向上或向下舍入为最接近的整数并返回该值。如果 val 与最接近的两个整数等距离（即该数字以 .5 结尾），则该值向上舍入为下一个较大的整数。" return="参数 val 舍入为最近的整数。">
+    <a name="val" type="Number" d="要舍入的数字。。" />
+  </f>
+  <f name="Math.sin" type="Number" source="Math" modifiers="Static" d="以弧度为单位计算并返回指定角度的正弦值。要计算弧度，请参阅 Math 类的概述。" return="一个数字；指定角度的正弦值（介于 -1.0 和 1.0 之间）。">
+    <a name="angleRadians" type="Number" d="一个数字，它表示一个以弧度为单位的角度。" />
+  </f>
+  <f name="Math.sqrt" type="Number" source="Math" modifiers="Static" d="计算并返回指定数字的平方根。" return="如果参数 val 大于等于 0，则为一个数字，否则为 NaN（非数字）。">
+    <a name="val" type="Number" d="一个大于等于 0 的数字或表达式。" />
+  </f>
+  <f name="Math.tan" type="Number" source="Math" modifiers="Static" d="计算并返回指定角度的正切值。要计算弧度，请参阅 Math 类的概述。" return="一个数字，它表示一个以弧度为单位的角度。">
+    <a name="val" type="Number" d="参数 angleRadians 的正切值。" />
+  </f>
+  <!-- Utils -->
+  <f name="Utils.hue" type="int" source="Utils" modifiers="Static" d="将0-360的值映射到色相环上,例如
+0 -> 0x0000ff
+120 -> 0xff0000
+240 -> 0x00ff00" return="一个色彩代码">
+    <a name="v" type="int" d="一个整数" />
+  </f>
+  <f name="Utils.rgb" type="int" source="Utils" modifiers="Static" d="将RGB值映射到色彩值上" return="一个色彩代码">
+    <a name="r" type="int" d="一个整数 RED" />
+    <a name="g" type="int" d="一个整数 GREEN" />
+    <a name="b" type="int" d="一个整数 BLUE" />
+  </f>
+  <f name="Utils.formatTimes" type="String" source="Utils" modifiers="Static" d="格式化播放时间" return="格式化后的播放时间">
+    <a name="time" type="Number" d="以秒为单位的播放时间" />
+  </f>
+  <f name="Utils.delay" type="void" source="Utils" modifiers="Static" d="延迟执行函数" remarks="此函数不会因播放器暂停而终止执行" aliases="timer()">
+    <a name="f" type="Function" d="要延迟执行的函数" />
+    <a name="time" type="Number" d="以毫秒为单位的延迟时间" />
+  </f>
+  <f name="Utils.interval" type="void" source="Utils" modifiers="Static" d="定时执行函数" aliases="interval()">
+    <a name="f" type="Function" d="要定时执行的函数" />
+    <a name="time" type="Number" d="以毫秒为单位的定时时间" default="1000" />
+    <a name="times" type="uint" d="以次为单位的执行次数 0为无限次" default="1" />
+  </f>
+  <f name="Utils.distance" type="Number" source="Utils" modifiers="Static" d="计算坐标距离" return="以像素为单位的座标距离">
+    <a name="x1" type="Number" d="计算起始坐标X轴" />
+    <a name="y1" type="Number" d="计算起始坐标Y轴" />
+    <a name="x2" type="Number" d="计算结束坐标X轴" />
+    <a name="y2" type="Number" d="计算结束坐标Y轴" />
+  </f>
+  <f name="Utils.rand" type="Number" source="Utils" modifiers="Static" d="返回一个伪随机数 n，其中 min &lt;= n &gt; max。因为该计算不可避免地包含某些非随机的成分，所以返回的数字以保密方式计算且为“伪随机数”。" return="伪随机数 n，其中 min &lt;= n &gt; max">
+    <a name="min" type="Number" d="伪随机数最小值" />
+    <a name="max" type="Number" d="伪随机数最大值" />
+  </f>
+  <!-- Tween -->
+  <f name="Tween.tween" type="ITween" source="Tween" modifiers="Static" d="使用指定方法对物件进行移动">
+    <a name="object" type="Object" d="要移动的物件" />
+    <a name="dest" type="Object" d="移动目标数值" />
+    <a name="src" type="Object" d="移动来源数值" />
+    <a name="duration" type="Number" d="移动时间" />
+    <a name="easing" type="Function" d="移动函数 请参阅 TweenEasing" />
+  </f>
+  <f name="Tween.to" type="ITween" source="Tween" modifiers="Static" d="使用指定方法对物件进行移动">
+    <a name="object" type="Object" d="要移动的物件" />
+    <a name="dest" type="Object" d="移动目标数值" />
+    <a name="duration" type="Number" d="移动时间" />
+    <a name="easing" type="Function" d="移动函数" />
+  </f>
+  <f name="Tween.bezier" type="ITween" source="Tween" modifiers="Static" d="以贝赛尔曲线对物件进行移动">
+    <a name="object" type="Object" d="要移动的物件" />
+    <a name="dest" type="Object" d="移动目标数值" />
+    <a name="src" type="Object" d="移动来源数值" />
+    <a name="control" type="Object" d="贝赛尔曲线控制点" />
+  </f>
+  <f name="Tween.scale" type="ITween" source="Tween" modifiers="Static" d="复制指定效果并按时间拉伸">
+    <a name="src" type="ITween" d="复制来源效果" />
+    <a name="scale" type="Number" d="时间轴缩放比例" />
+  </f>
+  <f name="Tween.delay" type="ITween" source="Tween" modifiers="Static" d="复制指定效果并延迟执行">
+    <a name="src" type="ITween" d="复制来源效果" />
+    <a name="delay" type="Number" d="以秒为单位的延迟时间" />
+  </f>
+  <f name="Tween.reverse" type="ITween" source="Tween" modifiers="Static" d="将指定效果反向">
+    <a name="src" type="ITween" d="复制来源效果" />
+  </f>
+  <f name="Tween.repeat" type="ITween" source="Tween" modifiers="Static" d="重复指定效果">
+    <a name="src" type="ITween" d="复制来源效果" />
+    <a name="times" type="int" d="效果执行次数" />
+  </f>
+  <f name="Tween.slice" type="ITween" source="Tween" modifiers="Static" d="取出指定效果时间">
+    <a name="src" type="ITween" d="复制来源效果" />
+    <a name="from" type="Number" d="起始时间(秒)" />
+    <a name="to" type="Number" d="结束时间(秒)" />
+  </f>
+  <f name="Tween.serial" type="ITween" source="Tween" modifiers="Static,Params" d="串行执行效果">
+    <a name="src1" type="ITween" d="串行执行效果来源" />
+  </f>
+  <f name="Tween.parallel" type="ITween" source="Tween" modifiers="Static,Params" d="并行执行效果">
+    <a name="src1" type="ITween" d="并行执行效果来源" />
+  </f>
+  <!-- Global -->
+  <f name="Global._set" type="void" source="Global" modifiers="Static" d="用于设置保存的变量值">
+    <a name="key" type="String" d="键值" />
+    <a name="val" type="*" d="保存的值" />
+  </f>
+  <f name="Global._get" type="*" source="Global" modifiers="Static" d="用于取出保存的键字" returns="保存的值" aliases="Global._">
+    <a name="key" type="String" d="键值" />
+  </f>
+  <f name="Global._" type="*" source="Global" modifiers="Static" d="用于取出保存的键字" returns="保存的值" aliases="Global._">
+    <a name="key" type="String" d="键值" />
+  </f>
+  <!-- ScriptManager -->
+  <f name="ScriptManager.clearTimer" type="void" source="ScriptManager" modifiers="Static" d="终止正在运行的所有定时器">
+  </f>
+  <f name="ScriptManager.ClearEl" type="void" source="ScriptManager" modifiers="Static" d="清除所有由高级弹幕创建的元件">
+  </f>
+  <f name="ScriptManager.clearTrigger" type="void" source="ScriptManager" modifiers="Static" d="清除所有由高级弹幕创建的触发器">
+  </f>
+  <!-- String -->
+  <f name="String.fromCharCode" type="String" source="String" modifiers="Static" d="从ASCII码转换为字符">
+    <a name="s" type="int" d="要转换的数值" />
+  </f>
+  <!-- Storage -->
+  <f name="Storage.loadRank" type="void" source="Storage (external)" modifiers="Static" d="加载分数排名">
+    <a name="complete" type="Function" d="读取成功回调函数。" />
+    <a name="err" type="Function" d="读取失败回调函数。" default="null" />
+  </f>
+  <f name="Storage.uploadScore" type="void" source="Storage (external)" modifiers="Static" d="上传分数">
+    <a name="score" type="Number" d="分数。" />
+    <a name="name" type="String" d="用户名。" default="null" />
+    <a name="complete" type="Function" d="成功回调函数。" default="null" />
+    <a name="err" type="Function" d="读取失败回调函数。" default="null" />
+  </f>
+  <f name="Storage.saveData" type="void" source="Storage (external)" modifiers="Static" d="存储数据">
+    <a name="userData" type="*" d="存储数据。" />
+    <a name="complete" type="Function" d="成功回调函数。" default="null" />
+    <a name="err" type="Function" d="读取失败回调函数。" default="null" />
+  </f>
+  <f name="Storage.loadData" type="void" source="Storage (external)" modifiers="Static" d="读取数据">
+    <a name="complete" type="Function" d="成功回调函数。" default="null" />
+    <a name="err" type="Function" d="读取失败回调函数。" default="null" />
+  </f>
+  <!-- Bitmap -->
+  <f name="Bitmap.createBitmapData" type="BitmapData" source="Bitmap (external)" modifiers="Static" d="创建一个具有指定的宽度和高度的 BitmapData 对象。如果为 fillColor 参数指定一个值，则位图中的每个像素都将设置为该颜色。
+默认情况下，将位图创建为透明位图，除非您为 transparent 参数传递值 false。创建了不透明位图后，将无法将其更改为透明位图。不透明位图中的每个像素仅使用 24 位的颜色通道信息。如果将位图定义为透明，则每个像素将使用 32 位的颜色通道信息，其中包括 Alpha 透明度通道。
+BitmapData 对象的最大宽度或高度为 8,191 像素，并且像素总数不能超过 16,777,215 像素。（因此，如果 BitmapData 对象的宽度为 8,191 像素，则其高度只能为 2,048 像素。）">
+    <a name="width" type="int" d="位图图像的宽度，以像素为单位。" />
+    <a name="height" type="int" d="位图图像的高度，以像素为单位。" />
+    <a name="transparent" type="Boolean" default="true" d="指定位图图像是否支持每个像素具有不同的透明度。默认值为 true（透明）。要创建完全透明的位图，请将 transparent 参数的值设置为 true，将 fillColor 参数的值设置为 0x00000000（或设置为 0）。将 transparent 属性设置为 false 可以略微提升呈现性能。" />
+    <a name="fillColor" type="uint" default="0xffffffff" d="用于填充位图图像区域的 32 位 ARGB 颜色值。默认值为 0xFFFFFFFF（纯白色）。" />
+  </f>
+  <f name="Bitmap.createRectangle" type="Rectangle" source="Bitmap (external)" modifiers="Static" d="创建一个新 Rectangle 对象，其左上角由 x 和 y 参数指定，并具有指定的 width 和 height 参数。如果调用此函数时不使用任何参数，将创建一个 x、y、width 和 height 属性均设置为 0 的矩形。">
+    <a name="x" type="Number" default="0" d="矩形左上角的 x 坐标。" />
+    <a name="y" type="Number" default="0" d="矩形左上角的 y 坐标。" />
+    <a name="width" type="Number" default="0" d="矩形的宽度（以像素为单位）" />
+    <a name="height" type="Number" default="0" d="矩形的高度（以像素为单位）。" />
+  </f>
+  <f name="Bitmap.createBitmap" type="CommentBitmap" source="Bitmap (external)" modifiers="Static" d="初始化 Bitmap 对象以引用指定的 BitmapData 对象。">
+    <a name="param" type="Object" d="包括以下参数。其他参数请详阅 Display#通用创建参数。" />
+    <a name="bitmapData" type="BitmapData" default="null" d="被引用的 BitmapData 对象。" modifiers="Hidden" />
+    <a name="pixelSnapping" type="String" default="&quot;auto&quot;" d="Bitmap 对象是否贴紧至最近的像素。" modifiers="Hidden" />
+    <a name="smoothing" type="Boolean" default="false" d="在缩放时是否对位图进行平滑处理。" modifiers="Hidden" />
+    <a name="parent" type="Object" default="undefined" d="创建的 Bitmap 对象的父元件" modifiers="Hidden" />
+    <a name="scale" type="Number" default="1" d="创建的 Bitmap 对象的缩放比例" modifiers="Hidden" />
+  </f>
+  <!-- ITween -->
+  <f name="ITween.play" type="void" source="ITween" d="开始播放效果">
+  </f>
+  <f name="ITween.gotoAndPlay" type="void" source="ITween" d="跳跃至指定时间并开始播放效果">
+    <a name="time" type="Number" d="以秒为单位的时间" />
+  </f>
+  <f name="ITween.stop" type="void" source="ITween" d="终止播放效果">
+  </f>
+  <f name="ITween.gotoAndStop" type="void" source="ITween" d="跳跃至指定时间并停止播放效果">
+    <a name="time" type="Number" d="以秒为单位的时间" />
+  </f>
+  <f name="ITween.togglePause" type="void" source="ITween" d="切换播放/暂停">
+  </f>
+  <!-- Display.createGraphic.graphics -->
+  <f name="Display.createGraphic.graphics.beginFill" type="void" source="Display.createGraphic.graphics" d="指定一种简单的单一颜色填充，可将该填充用于随后调用对象的其它 Graphics 方法（如 lineTo() 或 drawCircle()）。
+该填充将保持有效，直到您调用 beginFill() 或 beginGradientFill() 方法。
+调用 clear() 方法会清除填充。
+在调用 endFill() 方法之前，不会呈现填充。">
+    <a name="color" type="uint" d="填充的颜色" />
+    <a name="alpha" type="Number" d="填充的 Alpha 值（从 0.0 到 1.0）。" default="1.0" />
+  </f>
+  <f name="Display.createGraphic.graphics.beginGradientFill" type="void" source="Display.createGraphic.graphics" d="指定一种渐变填充，可将该填充用于随后调用对象的其它 Graphics 方法（如 lineTo() 或 drawCircle()）。
+该填充将保持有效，直到您调用 beginFill() 或 beginGradientFill() 方法。
+调用 clear() 方法会清除填充。
+在调用 endFill() 方法之前，不会呈现填充。">
+    <a name="type" type="String" d="用于指定要使用哪种渐变类型的 GradientType 值：linear 或 radial。" />
+    <a name="colors" type="Array&lt;uint&gt;" d="要在渐变中使用的 RGB 十六进制颜色值数组（例如，红色为 0xFF0000，蓝色为 0x0000FF，等等）。可以至多指定 15 种颜色。对于每种颜色，请确保在 alphas 和 ratios 参数中指定对应的值。" />
+    <a name="alphas" type="Array&lt;Number&gt;" d="colors 数组中对应颜色的 alpha 值数组；有效值为 0 到 1。如果值小于 0，则默认值为 0。如果值大于 1，则默认值为 1。" />
+    <a name="ratios" type="Array&lt;int&gt;" d="颜色分布比例的数组；有效值为 0 到 255。该值定义 100% 采样的颜色所在位置的宽度百分比。值 0 表示渐变框中的左侧位置，255 表示渐变框中的右侧位置。注意：该值表示渐变框中的位置，而不是最终渐变的坐标空间，坐标空间可能比渐变框宽或窄。为 colors 参数中的每个值指定一个值。数组中的值必须持续增加；例如，[0, 63, 127, 190, 255]。" />
+    <a name="matrix" type="Matrix" default="null" d="一个由 Matrix 类定义的转换矩阵。Matrix 类包括 createGradientBox() 方法，通过该方法可以方便地设置矩阵，以便与 beginGradientFill() 方法一起使用，亦可使用$.createGradientBox()。" />
+    <a name="spreadMethod" type="String" default="&quot;pad&quot;" d="用于指定要使用哪种 spread 方法。值：pad、reflect 或 repeat。" />
+    <a name="interpolationMethod" type="String" default="&quot;rgb&quot;" d="用于指定要使用哪个值。值：linearRGB 或 rgb。" />
+    <a name="focalPointRatio" type="Number" default="0" d="一个控制渐变的焦点位置的数字。0 表示焦点位于中心，1 表示焦点位于渐变圆的一条边界上，-1 表示焦点位于渐变圆的另一条边界上。小于 -1 或大于 1 的值将舍入为 -1 或 1。" />
+  </f>
+  <f name="Display.createGraphic.graphics.clear" type="void" source="Display.createGraphic.graphics" d="清除绘制到此 Graphics 对象的图形，并重置填充和线条样式设置。">
+  </f>
+  <f name="Display.createGraphic.graphics.curveTo" type="void" source="Display.createGraphic.graphics" d="通过由 (controlX, controlY) 指定的控制点，使用当前线条样式绘制一条从当前绘画位置开始到 (anchorX, anchorY) 结束的曲线。 当前绘画位置随后设置为 (anchorX, anchorY)。如果正在其中绘制的影片剪辑包含用 Flash 绘画工具创建的内容，则调用 curveTo() 方法将在该内容下面进行绘制。如果在调用 moveTo() 方法之前调用了 curveTo() 方法，则当前绘画位置的默认值为 (0, 0)。如果缺少任何一个参数，则此方法将失败，并且当前绘画位置不改变。
+绘制的曲线是二次贝塞尔曲线。二次贝塞尔曲线包含两个锚点和一个控制点。 该曲线内插这两个锚点，并向控制点弯曲。">
+    <a name="controlX" type="Number" d="一个数字，指定控制点相对于父显示对象注册点的水平位置。" />
+    <a name="controlY" type="Number" d="一个数字，指定控制点相对于父显示对象注册点的垂直位置。" />
+    <a name="anchorX" type="Number" d="一个数字，指定下一个锚点相对于父显示对象注册点的水平位置。" />
+    <a name="anchorY" type="Number" d="一个数字，指定下一个锚点相对于父显示对象注册点的垂直位置。" />
+  </f>
+  <f name="Display.createGraphic.graphics.drawCircle" type="void" source="Display.createGraphic.graphics" d="绘制一个圆。您必须在调用 drawCircle() 方法之前，通过调用 linestyle()、lineGradientStyle()、beginFill() 或 beginGradientFill() 方法来设置线条样式和/或填充。">
+    <a name="x" type="Number" d="相对于父显示对象注册点的圆心的 x 位置（以像素为单位）。" />
+    <a name="y" type="Number" d="相对于父显示对象注册点的圆心的 y 位置（以像素为单位）。" />
+    <a name="radius" type="Number" d="圆的半径（以像素为单位）。" />
+  </f>
+  <f name="Display.createGraphic.graphics.drawEllipse" type="void" source="Display.createGraphic.graphics" d="绘制一个椭圆。您必须在调用 drawEllipse() 方法之前，通过调用 linestyle()、lineGradientStyle()、beginFill() 或 beginGradientFill() 方法来设置线条样式和/或填充。">
+    <a name="x" type="Number" d="相对于父显示对象注册点的椭圆圆心的 x 位置（以像素为单位）。" />
+    <a name="y" type="Number" d="相对于父显示对象注册点的椭圆圆心的 y 位置（以像素为单位）。" />
+    <a name="width" type="Number" d="椭圆的宽度（以像素为单位）。" />
+    <a name="height" type="Number" d="椭圆的高度（以像素为单位）。" />
+  </f>
+  <f name="Display.createGraphic.graphics.drawRect" type="void" source="Display.createGraphic.graphics" d="绘制一个矩形。您必须在调用 drawRect() 方法之前，通过调用 linestyle()、lineGradientStyle()、beginFill() 或 beginGradientFill() 方法来设置线条样式和/或填充。">
+    <a name="x" type="Number" d="一个表示相对于父显示对象注册点的水平位置的数字（以像素为单位）。" />
+    <a name="y" type="Number" d="一个表示相对于父显示对象注册点的垂直位置的数字（以像素为单位）。" />
+    <a name="width" type="Number" d="矩形的宽度（以像素为单位）。" />
+    <a name="height" type="Number" d="矩形的高度（以像素为单位）。" />
+  </f>
+  <f name="Display.createGraphic.graphics.drawRoundRect" type="void" source="Display.createGraphic.graphics" d="绘制一个矩形。您必须在调用 drawRoundRect() 方法之前，通过调用 linestyle()、lineGradientStyle()、beginFill() 或 beginGradientFill() 方法来设置线条样式和/或填充。">
+    <a name="x" type="Number" d="一个表示相对于父显示对象注册点的水平位置的数字（以像素为单位）。" />
+    <a name="y" type="Number" d="一个表示相对于父显示对象注册点的垂直位置的数字（以像素为单位）。" />
+    <a name="width" type="Number" d="圆角矩形的宽度（以像素为单位）。" />
+    <a name="height" type="Number" d="圆角矩形的高度（以像素为单位）。" />
+    <a name="ellipseWidth" type="Number" d="用于绘制圆角的椭圆的宽度（以像素为单位）。" />
+    <a name="ellipseHeight" type="Number" d="用于绘制圆角的椭圆的高度（以像素为单位）。（可选）如果未指定值，则默认值与为 ellipseWidth 参数提供的值相匹配。" modifiers="Optional" />
+  </f>
+  <f name="Display.createGraphic.graphics.endFill" type="void" source="Display.createGraphic.graphics" d="对从上一次调用 beginFill() 或 beginGradientFill() 方法之后添加的直线和曲线应用填充。 Flash 使用的是对 beginFill() 或 beginGradientFill() 方法的先前调用中指定的填充。如果当前绘画位置不等于 moveTo() 方法中指定的上一个位置，而且定义了填充，则用线条闭合该路径，然后进行填充。">
+  </f>
+  <f name="Display.createGraphic.graphics.lineGradientStyle" type="void" source="Display.createGraphic.graphics" d="指定一种线条样式的渐变，Flash Player 可将该渐变用于随后调用对象的其它 Graphics 方法（如 lineTo() 或 drawCircle()）。线条样式仍然有效，直到使用不同的参数调用 lineStyle() 方法或 lineGradientStyle() 方法为止。可以在绘制路径的中间调用 lineGradientStyle() 方法以为路径中的不同线段指定不同的样式。
+在调用 lineGradientStyle() 之前调用 lineStyle() 以启用笔触，否则线条样式的值仍然是 undefined。" remarks="调用 clear() 会将线条样式设置回 undefined。">
+    <a name="type" type="String" d="用于指定要使用哪种渐变类型的 GradientType 类型。值：GradientType.LINEAR 或 GradientType.RADIAL。" />
+    <a name="colors" type="Array&lt;uint&gt;" d="要在渐变中使用的 RGB 十六进制颜色值数组（例如，红色为 0xFF0000，蓝色为 0x0000FF 等等）。" />
+    <a name="alphas" type="Array&lt;Number&gt;" d="colors 数组中对应颜色的 alpha 值数组，有效值为 0 到 100。如果值小于 0，Flash Player 将使用 0；如果值大于 100，Flash Player 将使用 100。" />
+    <a name="ratios" type="Array&lt;Number&gt;" d="颜色分布比率的数组，有效值为 0 到 255。该值定义 100% 采样的颜色所在位置的宽度百分比。值 0 表示渐变框中的左侧位置，255 表示渐变框中的右侧位置。该值表示渐变框中的位置，而不是最终渐变的坐标空间，坐标空间可能比渐变框宽或窄。为 colors 参数中的每个值指定一个值。数组中的值必须持续增加；例如，[0, 63, 127, 190, 255]。" />
+    <a name="matrix" type="Matrix" default="null" d="一个由 Matrix 类定义的转换矩阵。Matrix 类包括 createGradientBox() 方法，通过该方法可以方便地设置矩阵，以便与 beginGradientFill() 方法一起使用，亦可使用$.createGradientBox()。" />
+    <a name="spreadMethod" type="String" default="&quot;pad&quot;" d="用于指定要使用哪种 spread 方法。值：pad, reflect, repeat。" />
+    <a name="interpolationMethod" type="String" default="&quot;rgb&quot;" d="用于指定要使用哪个值。值：linearRGB 或 rgb。" />
+    <a name="focalPointRatio" type="Number" default="0" d="一个控制渐变的焦点位置的数字。0 表示焦点位于中心，1 表示焦点位于渐变圆的一条边界上，-1 表示焦点位于渐变圆的另一条边界上。小于 -1 或大于 1 的值将舍入为 -1 或 1。" />
+  </f>
+  <f name="Display.createGraphic.graphics.lineStyle" type="void" source="Display.createGraphic.graphics" d="指定一种线条样式，Flash 可将该样式用于随后调用对象的其它 Graphics 方法（如 lineTo() 或 drawCircle()）。线条样式仍然有效，直到使用不同的参数调用 lineGradientStyle() 方法或 lineStyle() 方法为止。可以在绘制路径的中间调用 lineStyle()，以便为路径中的不同线段指定不同的样式。" remarks="调用 clear() 方法会将线条样式设置回 undefined。">
+    <a name="thickness" type="Number" d="一个整数，以磅为单位表示线条的粗细，有效值为 0 到 255。如果未指定数字，或者未定义该参数，则不绘制线条。如果传递的值小于 0，则默认值为 0。值 0 表示极细的粗细；最大粗细为 255。如果传递的值大于 255，则默认值为 255。" />
+    <a name="color" type="uint" default="0" modifiers="Optional" d="线条的十六进制颜色值（例如，红色为 0xFF0000，蓝色为 0x0000FF 等）。如果未指明值，则默认值为 0x000000（黑色）。可选。" />
+    <a name="alpha" type="Number" default="1.0" modifiers="Optional" d="表示线条颜色的 Alpha 值的数字，有效值为 0 到 1。如果未指明值，则默认值为 1（纯色）。如果值小于 0，则默认值为 0；如果值大于 1，则默认值为 1。" />
+    <a name="pixelHinting" type="Boolean" default="false" modifiers="Optional" d="用于指定是否提示笔触采用完整像素的布尔值。它同时影响曲线锚点的位置以及线条笔触大小本身。在 pixelHinting 设置为 true 的情况下，Flash Player 将提示线条宽度采用完整像素宽度。在 pixelHinting 设置为 false 的情况下，对于曲线和直线可能会出现脱节。如果未提供值，则线条不使用像素提示。" />
+    <a name="scaleMode" type="String" default="&quot;normal&quot;" modifiers="Optional" d="用于指定要使用哪种缩放模式的 LineScaleMode 类的值：normal（在缩放对象时总是缩放线条的粗细，默认值）, none（从不缩放线条粗细）,vertical（如果仅垂直缩放对象，则不缩放线条粗细）, horizontal（如果仅水平缩放对象，则不缩放线条粗细）" />
+    <a name="caps" type="String" default="null" modifiers="Optional" d="用于指定线条末端处端点类型的 CapsStyle 类的值。有效值为：none、round 和 square。如果未指示值，则 Flash 使用圆头端点。" />
+    <a name="joints" type="String" default="null" modifiers="Optional" d="JointStyle 类的值，指定用于拐角的连接外观的类型。有效值为：bevel、miter 和 round。如果未指示值，则 Flash 使用圆角连接。注意：对于设置为 JointStyle.MITER 的 joints，您可以使用 miterLimit 参数限制尖角的长度。" />
+    <a name="miterLimit" type="Number" default="3" modifiers="Optional" d="一个表示将在哪个限制位置切断尖角的数字。有效值的范围是 1 到 255（超出该范围的值将舍入为 1 或 255）。此值只可用于 jointStyle 设置为 &quot;miter&quot; 的情况下。miterLimit 值表示向外延伸的尖角可以超出角边相交所形成的结合点的长度。此值表示为线条 thickness 的因子。例如，miterLimit 因子为 2.5 且 thickness 为 10 像素时，尖角将在 25 像素处切断。请注意，对于给定的 miterLimit 值，会有一个被切断的尖角的特定最大角度。" />
+  </f>
+  <f name="Display.createGraphic.graphics.lineTo" type="void" source="Display.createGraphic.graphics" d="使用当前线条样式绘制一条从当前绘画位置开始到 (x, y) 结束的直线；当前绘画位置随后会设置为 (x, y)。如果正在其中绘制的显示对象包含用 Flash 绘画工具创建的内容，则调用 lineTo() 方法将在该内容下面进行绘制。如果在对 moveTo() 方法进行任何调用之前调用了 lineTo()，则当前绘画的默认位置为 (0, 0)。如果缺少任何一个参数，则此方法将失败，并且当前绘画位置不改变。">
+    <a name="x" type="Number" d="一个表示相对于父显示对象注册点的水平位置的数字（以像素为单位）。" />
+    <a name="y" type="Number" d="一个表示相对于父显示对象注册点的垂直位置的数字（以像素为单位）。" />
+  </f>
+  <f name="Display.createGraphic.graphics.moveTo" type="void" source="Display.createGraphic.graphics" d="将当前绘画位置移动到 (x, y)。如果缺少任何一个参数，则此方法将失败，并且当前绘画位置不改变。">
+    <a name="x" type="Number" d="一个表示相对于父显示对象注册点的水平位置的数字（以像素为单位）。" />
+    <a name="y" type="Number" d="一个表示相对于父显示对象注册点的垂直位置的数字（以像素为单位）。" />
+  </f>
+</insight>

@@ -1,0 +1,20 @@
+{
+  "name": "ax2m",
+  "version": "0.1.0",
+  "description": "BiliBili scripted danmaku API document generator",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo No tests available. && exit 0"
+  },
+  "keywords": [
+    "webgl",
+    "flash",
+    "graphics"
+  ],
+  "author": "George Wu <uiharu@buaa.edu.cn>",
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.16",
+    "typescript": "^1.8.10"
+  }
+}

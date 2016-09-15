@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<snippets version="1.0">
+  <!--请在名称后加入“{}”，否则容易与关键字形成重载。-->
+  <snippet name="ctor{}" d="Constructor">
+    class ClassName
+    {
+      function ClassName()
+      {
+        // TODO: Insert code here.
+      }
+    }
+  </snippet>
+  <snippet name="try{}" d="Try...Catch Block">
+    try
+    {
+      // TODO: Insert trial code here.
+    }
+    catch (ex)
+    {
+      // TODO: Insert exception handling code here.
+    }
+  </snippet>
+  <snippet name="tryf{}" d="Try...Finally Block">
+    try
+    {
+      // TODO: Insert trial code here.
+    }
+    finally
+    {
+      // TODO: Insert finally statements here.
+    }
+  </snippet>
+  <snippet name="if{}" d="If...Else Block">
+    if (true)
+    {
+      // TODO: Insert consequent code here.
+    }
+    else
+    {
+      // TODO: Insert alternative code here.
+    }
+  </snippet>
+  <snippet name="else{}" d="Else Block">
+    else
+    {
+      // TODO: Insert alternative code here.
+    }
+  </snippet>
+  <snippet name="while{}" d="While Block">
+    while (true)
+    {
+      // TODO: Insert code here.
+    }
+  </snippet>
+  <snippet name="do{}" d="Do...While Block">
+    do
+    {
+      // TODO: Insert code here.
+    } while (true);
+  </snippet>
+</snippets>

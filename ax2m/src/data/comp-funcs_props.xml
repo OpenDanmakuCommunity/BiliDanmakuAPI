@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<completion-lists version="1.0">
+	<list name="Display" static="true">
+		<item name="createBlurFilter" type="function" return="BlurFilter" d="创建模糊滤镜" />
+		<item name="createButton" type="function" return="CommentButton" d="创建 Button 对象" />
+		<item name="createCanvas" type="function" return="CommentCanvas" d="创建 Canvas 对象" />
+		<item name="createColorTransform" type="function" return="ColorTransform" d="创建颜色变换" />
+		<item name="createComment" type="function" return="CommentField" d="创建字幕" />
+		<item name="createGlowFilter" type="function" return="GlowFilter" d="创建发光滤镜" />
+		<item name="createMatrix" type="function" return="Matrix" d="创建 Matrix 对象" />
+		<item name="createMatrix3D" type="function" return="Matrix3D" d="创建 Matrix3D 对象" />
+		<item name="createPoint" type="function" return="Point" d="创建 Point 对象" />
+		<item name="createShape" type="function" return="Shape" d="创建 Shape 对象" />
+		<item name="createTextFormat" type="function" return="TextFormat" d="创建文本格式" />
+		<item name="fullScreenHeight" type="property" return="uint" d="全屏显示器高度(只读)" modifiers="ReadOnly" />
+		<item name="fullScreenWidth" type="property" return="uint" d="全屏显示器宽度(只读)" modifiers="ReadOnly" />
+		<item name="height" type="property" return="Number" d="对象高度(只读)" modifiers="ReadOnly" />
+		<item name="width" type="property" return="Number" description="对象宽度(只读)" modifiers="ReadOnly" />
+		<item name="toIntVector" type="function" return="Vector&lt;int&gt;" d="将数组转换为 Vector&lt;int&gt;" />
+		<item name="toUIntVector" type="function" return="Vector&lt;uint&gt;" d="将数组转换为 Vector&lt;uint&gt;" />
+		<item name="toNumberVector" type="function" return="Vector&lt;Number&gt;" d="将数组转换为 Vector&lt;Number&gt;" />
+	</list>
+	<list name="Utils" static="true">
+		<item name="delay" type="function" return="void" d="延迟执行" />
+		<item name="distance" type="function" return="Number" d="计算距离" />
+		<item name="formatTimes" type="function" return="String" d="格式化时间" />
+		<item name="hue" type="function" return="int" d="映射色相" />
+		<item name="interval" type="function" return="void" d="定时执行" />
+		<item name="rand" type="function" return="Number" d="生成随机数" />
+		<item name="rgb" type="function" return="int" d="映射色彩值" />
+	</list>
+	<list name="Player" static="true">
+		<item name="commentList" type="property" return="Array&lt;CommentData&gt;" d="获取当前弹幕列表" />
+		<item name="commentTrigger" type="function" return="uint" d="监听发送弹幕" />
+		<item name="createSound" type="function" return="ScriptSound" d="建立声音元件" />
+		<item name="height" type="property" return="int" d="播放器高度(只读)" modifiers="ReadOnly" />
+		<item name="jump" type="function" return="void" d="跳至视频" />
+		<item name="keyTrigger" type="function" return="uint" d="监听键盘输入" />
+		<item name="pause" type="function" return="void" d="暂停视频" />
+		<item name="play" type="function" return="void" d="播放视频" />
+		<item name="refreshRate" type="property" return="int" d="弹幕刷新时间(ms)" />
+		<item name="seek" type="function" return="void" d="跳至时间" />
+		<item name="setMask" type="function" return="void" d="设置播放器遮罩" />
+		<item name="state" type="property" return="String" d="播放器状态(只读)" modifiers="ReadOnly" />
+		<item name="time" type="property" return="Number" d="播放距头的位置(只读)" modifiers="ReadOnly" />
+		<item name="videoHeight" type="property" return="int" d="视频高度(只读)" modifiers="ReadOnly" />
+		<item name="videoWidth" type="property" return="int" d="视频宽度(只读)" modifiers="ReadOnly" />
+		<item name="width" type="property" return="int" d="播放器宽度(只读)" modifiers="ReadOnly" />
+	</list>
+	<list name="Global" static="true">
+    <item name="_" type="function" return="*" d="读取值" />
+		<item name="_get" type="function" return="*" d="读取值" />
+		<item name="_set" type="function" return="void" d="保存值" />
+	</list>
+	<list name="ScriptManager" static="true">
+		<item name="clearTimer" type="function" return="void" d="中止所有计时器" />
+		<item name="clearEl" type="function" return="void" d="清除所有高级弹幕创建的元件" />
+		<item name="clearTrigger" type="function" return="void" d="清除所有高级弹幕创建的触发器" />
+	</list>
+	<list name="String" static="true">
+		<item name="fromCharCode" type="function" return="String" description="将 ASCII 码转换为字符" />
+	</list>
+	<list name="Tween" static="true">
+		<item name="bezier" type="function" return="ITween" d="使用贝塞尔曲线移动对象" />
+		<item name="delay" type="function" return="ITween" d="复制移动效果并且延迟执行" />
+		<item name="parallel" type="function" return="ITween" d="并行执行效果" />
+		<item name="serial" type="function" return="ITween" d="串行执行效果" />
+		<item name="slice" type="function" return="ITween" d="取出指定效果时间" />
+		<item name="repeat" type="function" return="ITween" d="重复移动效果" />
+		<item name="reverse" type="function" return="ITween" d="将移动反向" />
+		<item name="to" type="function" return="ITween" d="使用指定方法移动对象" />
+		<item name="tween" type="function" return="ITween" d="使用指定方法移动对象" />
+	</list>
+	<list name="Bitmap" static="true">
+		<item name="createBitmap" type="function" return="CommentBitmap" d="创建位图对象" />
+		<item name="createBitmapData" type="function" return="BitmapData" d="创建 BitmapData 对象" />
+		<item name="createRectangle" type="function" return="Rectangle" d="创建矩形" />
+	</list>
+	<list name="Storage" static="true">
+		<item name="loadData" type="function" return="void" d="读取数据" />
+		<item name="loadRank" type="function" return="void" d="读取排名信息" />
+		<item name="saveData" type="function" return="void" d="保存数据" />
+		<item name="uploadScore" type="function" return="void" d="上传分数" />
+	</list>
+	<list name="CommentField" static="false">
+		<item name="alwaysShowSelection" type="property" return="Boolean" source="CommentField" />
+		<item name="appendText" type="function" return="void" source="CommentField" />
+		<item name="background" type="property" return="Boolean" source="CommentField" />
+		<item name="backgroundColor" type="property" return="uint" source="CommentField" />
+		<item name="bold" type="property" return="Boolean" source="CommentField" />
+		<item name="border" type="property" return="Boolean" source="CommentField" />
+		<item name="borderColor" type="property" return="uint" source="CommentField" />
+		<item name="bottomScrollV" type="property" return="int" source="CommentField" modifiers="ReadOnly" />
+		<item name="condenseWhite" type="property" return="Boolean" source="CommentField" />
+		<item name="defaultTextFormat" type="property" return="TextFormat" source="CommentField" />
+		<item name="fontSize" type="property" return="Number" source="CommentField" />
+		<item name="gridFitType" type="property" return="String" source="CommentField" />
+		<item name="length" type="property" return="int" source="CommentField" modifiers="ReadOnly" />
+		<item name="htmlText" type="property" return="String" source="CommentField" />
+		<item name="multiline" type="property" return="Boolean" source="CommentField" />
+		<item name="numLines" type="property" return="int" source="CommentField" modifiers="ReadOnly" />
+		<item name="restrict" type="property" return="String" source="CommentField" />
+		<item name="sharpness" type="property" return="Number" source="CommentField" />
+		<item name="text" type="property" return="String" source="CommentField" />
+		<item name="textColor" type="property" return="uint" source="CommentField" />
+		<item name="textHeight" type="property" return="Number" source="CommentField" />
+		<item name="textWidth" type="property" return="Number" source="CommentField" />
+		<item name="thickness" type="property" return="Number" source="CommentField" />
+		<item name="wordWrap" type="property" return="Boolean" source="CommentField" />
+  	</list>
+	<list name="CommentData" static="false">
+		<item name="color" type="property" return="uint" source="CommentData" />
+		<item name="fontSize" type="property" return="uint" source="CommentData" />
+		<item name="mode" type="property" return="int" source="CommentData" />
+		<item name="pool" type="property" return="int" source="CommentData" />
+		<item name="time" type="property" return="Number" source="CommentData" />
+		<item name="txt" type="property" return="String" source="CommentData" />
+	</list>
+</completion-lists>

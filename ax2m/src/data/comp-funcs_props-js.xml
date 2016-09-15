@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<completion-lists version="1.0">
+  <list name="Math" static="true">
+    <item name="abs" type="function" return="Number" d="获取绝对值" />
+    <item name="acos" type="function" return="Number" d="反余弦" />
+    <item name="asin" type="function" return="Number" d="反正弦" />
+    <item name="atan" type="function" return="Number" d="反正切" />
+    <item name="atan2" type="function" return="Number" d="反正切" />
+    <item name="ceil" type="function" return="Number" d="返回上限整数" />
+    <item name="cos" type="function" return="Number" d="余弦" />
+    <item name="E" type="constant" return="Number" d="自然对数底数" />
+    <item name="exp" type="function" return="Number" d="以e为底的指数" />
+    <item name="floor" type="function" return="Number" d="返回下限整数" />
+    <item name="log" type="function" return="Number" d="自然对数" />
+    <item name="max" type="function" return="Number" d="返回最大值" />
+    <item name="min" type="function" return="Number" d="返回最大值" />
+    <item name="PI" type="constant" return="Number" d="π" />
+    <item name="pow" type="function" return="Number" d="计算幂函数" />
+    <item name="random" type="function" return="Number" d="返回伪随机数" />
+    <item name="round" type="function" return="Number" d="四舍五入取整" />
+    <item name="sin" type="function" return="Number" d="正弦" />
+    <item name="sqrt" type="function" return="Number" d="计算平方根" />
+    <item name="tan" type="function" return="Number" d="正切" />
+  </list>
+  <list name="Graphics" static="false">
+    <item name="beginFill" type="function" return="void" source="Graphics" />
+    <item name="beginGradientFill" type="function" return="void" source="Graphics" />
+    <item name="clear" type="function" return="void" source="Graphics" />
+    <item name="curveTo" type="function" return="void" source="Graphics" />
+    <item name="drawCircle" type="function" return="void" source="Graphics" />
+    <item name="drawEllipse" type="function" return="void" source="Graphics" />
+    <item name="drawRect" type="function" return="void" source="Graphics" />
+    <item name="drawRoundRect" type="function" return="void" source="Graphics" />
+    <item name="endFill" type="function" return="void" source="Graphics" />
+    <item name="lineGradientStyle" type="function" return="void" source="Graphics" />
+    <item name="lineStyle" type="function" return="void" source="Graphics" />
+    <item name="lineTo" type="function" return="void" source="Graphics" />
+    <item name="moveTo" type="function" return="void" source="Graphics" />
+  </list>
+  <list name="ITween" static="false">
+    <item name="gotoAndPlay" type="function" return="void" source="ITween" />
+    <item name="gotoAndStop" type="function" return="void" source="ITween" />
+    <item name="play" type="function" return="void" source="ITween" />
+    <item name="stop" type="function" return="void" source="ITween" />
+    <item name="togglePause" type="function" return="void" source="ITween" />
+    <item name="stopOnComplete" type="property" return="Boolean" source="ITween" />
+  </list>
+  <list name="Shape" static="false">
+    <item name="graphics" type="property" return="Graphics" source="Shape" />
+  </list>
+  <list name="Object" static="true">
+    <item name="prototype" type="property" return="Object" source="Object" />
+  </list>
+  <list name="Object" static="false">
+    <item name="hasOwnProperty" type="function" return="Boolean" source="Object" />
+    <item name="isPrototypeOf" type="function" return="Boolean" source="Object" />
+    <item name="propertyIsEnumerable" type="function" return="Boolean" source="Object" />
+    <item name="setPropertyIsEnumerable" type="function" return="void" source="Object" />
+    <item name="toLocaleString" type="function" return="String" source="Object" />
+    <item name="toString" type="function" return="String" source="Object" />
+    <item name="valueOf" type="function" return="Object" source="Object" />
+  </list>
+  <list name="Timer" static="false">
+    <item name="stop" type="function" return="void" source="Timer" />
+  </list>
+  <list name="String" static="false">
+    <item name="length" type="property" return="int" source="String" />
+    <item name="charAt" type="function" return="String" source="String" />
+    <item name="charCodeAt" type="function" return="Number" source="String" />
+    <item name="concat" type="function" return="String" source="String" />
+    <item name="indexOf" type="function" return="int" source="String" />
+    <item name="lastIndexOf" type="function" return="int" source="String" />
+    <item name="localeCompare" type="function" return="int" source="String" />
+    <item name="match" type="function" return="Array.&lt;String&gt;" source="String" />
+    <item name="replace" type="function" return="String" source="String" />
+    <item name="search" type="function" return="int" source="String" />
+    <item name="slice" type="function" return="String" source="String" />
+    <item name="split" type="function" return="Array.&lt;String&gt;" source="String" />
+    <item name="substr" type="function" return="String" source="String" />
+    <item name="substring" type="function" return="String" source="String" />
+    <item name="toLocaleLowerCase" type="function" return="String" source="String" />
+    <item name="toLocaleUpperCase" type="function" return="String" source="String" />
+    <item name="toLowerCase" type="function" return="String" source="String" />
+    <item name="toUpperCase" type="function" return="String" source="String" />
+    <item name="valueOf" type="function" return="String" source="String" />
+  </list>
+</completion-lists>

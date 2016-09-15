@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<completion-lists version="1.0">
+  <!--名称只能用"Classes"，见 DV.ClassListName。-->
+  <list name="Classes" static="true">
+    <item name="Math" type="class" d="Math class" />
+    <item name="Display" type="class" d="Display class" />
+    <item name="Utils" type="class" d="Utils class" />
+    <item name="Player" type="class" d="Player class" />
+    <item name="Global" type="class" d="Global class" />
+    <item name="ScriptManager" type="class" d="ScriptManager class" />
+    <item name="String" type="class" d="String class" />
+    <item name="Tween" type="class" d="Tween class" />
+    <item name="Bitmap" type="class" d="Bitmap class (load('bitmap') first)" />
+    <item name="Storage" type="class" d="Storage class (load('storage') first" />
+    <item name="Boolean" type="class" d="Boolean class" />
+    <item name="Number" type="class" d="Number class" />
+    <item name="Object" type="class" d="Object class" />
+    <item name="Function" type="class" d="Function class" />
+    <item name="null" type="class" d="null type" />
+    <item name="undefined" type="class" d="undefined type" />
+    <item name="Display.createGraphic.graphics" type="class" d="" />
+  </list>
+</completion-lists>
