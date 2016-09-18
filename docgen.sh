@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-node --harmony_destructuring ./ax2m/src/index.js
+cd ./ax2m/src/
+node --harmony_destructuring index.js

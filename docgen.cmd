@@ -1,1 +1,3 @@
-@node --harmony_destructuring ax2m/src/index.js
+@echo off
+cd ax2m/src
+node --harmony_destructuring index.js
