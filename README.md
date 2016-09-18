@@ -16,8 +16,4 @@ $ npm install
 $ tsc
 ```
 
-生成文档：
-
-```shell
-$ node --harmony_destructuring ax2m/src/index.js
-```
+使用 `docgen.cmd`（Windows）或 `docgen.sh`（\*nix）生成文档。

@@ -1,0 +1,1 @@
+@node --harmony_destructuring ax2m/src/index.js
