@@ -43,11 +43,9 @@ export abstract class U {
             return 0;
         }
         var r = 0;
-        for (var k in ModifierStr) {
-            if (ModifierStr.hasOwnProperty(k)) {
-                if (s.indexOf(ModifierStr[k]) >= 0) {
-                    r |= ModifierInt[k];
-                }
+        for (var str of ModifierStr) {
+            if (s.indexOf(str) >= 0) {
+                r |= ModifierInt[str];
             }
         }
         return r;

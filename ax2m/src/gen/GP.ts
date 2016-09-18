@@ -33,6 +33,9 @@ if (!(<any>Buffer.prototype).w) {
     };
 }
 
+/**
+ * Generation Processor
+ */
 export abstract class GP {
 
     static gen(g: Map<string, ClassInfo>, f: Map<string, FieldInfo>, outDir: string): void {

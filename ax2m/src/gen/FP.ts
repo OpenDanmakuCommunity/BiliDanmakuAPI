@@ -10,6 +10,9 @@ import {ArgInfo} from "../info/ArgInfo";
 import {ModifierStr} from "../info/Modifier";
 import * as Chalk from "chalk";
 
+/**
+ * File Processor
+ */
 export abstract class FP {
 
     /**

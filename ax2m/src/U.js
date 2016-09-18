@@ -35,11 +35,9 @@ class U {
             return 0;
         }
         var r = 0;
-        for (var k in Modifier_1.ModifierStr) {
-            if (Modifier_1.ModifierStr.hasOwnProperty(k)) {
-                if (s.indexOf(Modifier_1.ModifierStr[k]) >= 0) {
-                    r |= Modifier_1.ModifierInt[k];
-                }
+        for (var str of Modifier_1.ModifierStr) {
+            if (s.indexOf(str) >= 0) {
+                r |= Modifier_1.ModifierInt[str];
             }
         }
         return r;
