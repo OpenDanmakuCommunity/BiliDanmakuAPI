@@ -7,9 +7,10 @@
     "test": "echo No tests available. && exit 0"
   },
   "keywords": [
-    "webgl",
-    "flash",
-    "graphics"
+    "document",
+    "generation",
+    "bilibili",
+    "danmaku"
   ],
   "author": "George Wu <uiharu@buaa.edu.cn>",
   "license": "MIT",
