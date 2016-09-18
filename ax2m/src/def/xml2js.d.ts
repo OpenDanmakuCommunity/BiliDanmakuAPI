@@ -18,15 +18,20 @@ declare module 'xml2js' {
 
         class Builder {
             constructor(options?: BuilderOptions);
+
             buildObject(rootObj: any): string;
         }
 
         class Parser {
             constructor(options?: Options);
+
             processAsync(): any;
+
             assignOrPush(obj: any, key: string, newValue: any): any;
+
             reset(): any;
-            parseString(str: string , cb?: Function): void;
+
+            parseString(str: string, cb?: Function): void;
         }
 
         interface RenderOptions {

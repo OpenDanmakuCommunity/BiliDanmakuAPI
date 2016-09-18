@@ -2,6 +2,7 @@
 const U_1 = require("../U");
 const FieldType_1 = require("../info/FieldType");
 const Modifier_1 = require("../info/Modifier");
+const Chalk = require("chalk");
 class FP {
     static read1(node, g) {
         var completionLists = node["completion-lists"]["list"];
@@ -21,7 +22,7 @@ class FP {
             var membersStatic = U_1.U.parseBool(list.$["static"]);
             var clazz;
             if (!g.has(listName)) {
-                console.warn(`WARN: class "${listName}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} class "${Chalk.magenta(listName)}" is not found, creating.`);
                 clazz = createClass(listName, "ERR: NO CLASS DESC");
                 g.set(clazz.name, clazz);
             }
@@ -49,7 +50,7 @@ class FP {
             }
             var clazz;
             if (!g.has(mfSource)) {
-                console.warn(`WARN: class "${mfSource}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} class "${Chalk.magenta(mfSource)}" is not found, creating.`);
                 clazz = createClass(mfSource, "ERR: NO CLASS DESC");
                 g.set(clazz.name, clazz);
             }
@@ -59,7 +60,7 @@ class FP {
             var mfMember = fieldNode.$["name"].substring(mfSource.length + 1);
             var member;
             if (!clazz.fields.has(mfMember)) {
-                console.warn(`ERR: Member "${mfMember}" of class "${mfSource}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} Member "${Chalk.cyan(mfMember)}" of class "${Chalk.magenta(mfSource)}" is not found, creating.`);
                 member = createField(mfMember, "ERR: NO COMP DESC", FieldType_1.FieldType.Function, fieldNode.$["type"], false);
                 clazz.fields.set(member.name, member);
             }

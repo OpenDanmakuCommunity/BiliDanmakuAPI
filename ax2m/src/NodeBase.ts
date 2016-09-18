@@ -3,5 +3,5 @@
  */
 
 export interface NodeBase<V> {
-    [key:string]:string|string[]|V|NodeBase<V>|NodeBase<V>[];
+    [key: string]: string|string[]|V|NodeBase<V>|NodeBase<V>[];
 }

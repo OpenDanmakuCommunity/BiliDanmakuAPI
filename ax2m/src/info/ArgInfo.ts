@@ -3,10 +3,10 @@
  */
 
 export interface ArgInfo {
-    name:string;
-    type:string;
-    description:string;
-    defaultValue?:string;
-    modifiers?:string;
-    modifiersV?:number;
+    name: string;
+    type: string;
+    description: string;
+    defaultValue?: string;
+    modifiers?: string;
+    modifiersV?: number;
 }

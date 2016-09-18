@@ -3,5 +3,5 @@
  */
 
 export interface IMarkable {
-    toMarkdown():string;
+    toMarkdown(): string;
 }

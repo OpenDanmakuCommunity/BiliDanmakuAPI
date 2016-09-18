@@ -11,12 +11,12 @@ import {ArgInfo} from "../info/ArgInfo";
 import {FieldType} from "../info/FieldType";
 import {ModifierInt} from "../info/Modifier";
 
-let EOL:string = os.EOL;
-let EOL2:string = EOL + EOL;
+let EOL: string = os.EOL;
+let EOL2: string = EOL + EOL;
 
 interface BufferWithPtr extends Buffer {
-    ptr:number;
-    w(content:string):void;
+    ptr: number;
+    w(content: string): void;
 }
 
 if (!(<any>Buffer.prototype).w) {
@@ -28,14 +28,14 @@ if (!(<any>Buffer.prototype).w) {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions :
     // An arrow function expression has a shorter syntax compared to function expressions and lexically binds the `this`
     // value (does not bind its own `this`, `arguments`, `super`, or `new.target`). Arrow functions are always anonymous.
-    (<any>Buffer.prototype).w = function (content:string):void {
+    (<any>Buffer.prototype).w = function (content: string): void {
         this.ptr += this.write(content, this.ptr);
     };
 }
 
 export abstract class GP {
 
-    static gen(g:Map<string, ClassInfo>, f:Map<string, FieldInfo>, outDir:string):void {
+    static gen(g: Map<string, ClassInfo>, f: Map<string, FieldInfo>, outDir: string): void {
         if (fs.existsSync(outDir)) {
             outDir = path.resolve(outDir);
             rmAll(outDir);
@@ -44,7 +44,7 @@ export abstract class GP {
         generateGlobalFunctions(f, outDir);
     }
 
-    static filter(g:Map<string, ClassInfo>, f:Map<string, FieldInfo>):void {
+    static filter(g: Map<string, ClassInfo>, f: Map<string, FieldInfo>): void {
         var invalidClassNames = ["Boolean", "Number", "Object", "String", "Function", "null", "undefined"];
         for (var [_, clazz] of g) {
             if (invalidClassNames.indexOf(clazz.name) >= 0) {
@@ -55,12 +55,12 @@ export abstract class GP {
 
 }
 
-function generateClasses(g:Map<string, ClassInfo>, outDir:string):void {
+function generateClasses(g: Map<string, ClassInfo>, outDir: string): void {
     ensureDirExists(outDir);
     for (var [_1, _2] of g) {
         var clazz = <ClassInfo>_2;
         var markdownFileName = `doc-${clazz.name}.md`;
-        var buf:BufferWithPtr = <BufferWithPtr>new Buffer(50 * 1024);
+        var buf: BufferWithPtr = <BufferWithPtr>new Buffer(50 * 1024);
         buf.fill(0);
         buf.ptr = 0;
         writeClass(clazz, buf);
@@ -70,12 +70,12 @@ function generateClasses(g:Map<string, ClassInfo>, outDir:string):void {
     }
 }
 
-function generateGlobalFunctions(g:Map<string, FieldInfo>, outDir:string):void {
+function generateGlobalFunctions(g: Map<string, FieldInfo>, outDir: string): void {
     ensureDirExists(outDir);
     for (var [_1, _2] of g) {
         var func = <FieldInfo>_2;
         var markdownFileName = `doc-Functions.md`;
-        var buf:BufferWithPtr = <BufferWithPtr>new Buffer(50 * 1024);
+        var buf: BufferWithPtr = <BufferWithPtr>new Buffer(50 * 1024);
         buf.fill(0);
         buf.ptr = 0;
         writeFuncs(g, buf);
@@ -85,8 +85,8 @@ function generateGlobalFunctions(g:Map<string, FieldInfo>, outDir:string):void {
     }
 }
 
-function writeClass(clazz:ClassInfo, buf:BufferWithPtr):void {
-    var content:string;
+function writeClass(clazz: ClassInfo, buf: BufferWithPtr): void {
+    var content: string;
     content = mdescape(clazz.name);
     buf.w(`# ${content}${EOL2}`);
     content = mdescape(clazz.description);
@@ -109,8 +109,8 @@ function writeClass(clazz:ClassInfo, buf:BufferWithPtr):void {
     }
 }
 
-function writeField(field:FieldInfo, buf:BufferWithPtr, className:string):void {
-    var content:string;
+function writeField(field: FieldInfo, buf: BufferWithPtr, className: string): void {
+    var content: string;
     var fullFieldName = (className ? className + "." : "") + field.name;
     content = mdescape(fullFieldName);
     if (field.fieldType === FieldType.Function) {
@@ -154,7 +154,7 @@ function writeField(field:FieldInfo, buf:BufferWithPtr, className:string):void {
         content = mdescape(`> ${field.descComp || field.descInsight}`);
     }
     buf.w(`${content}${EOL2}`);
-    var returnType:string;
+    var returnType: string;
     if (field.rTypeComp && field.rTypeInsight) {
         if (field.rTypeComp !== field.rTypeInsight) {
             returnType = `\`${field.rTypeComp}\`/\`${field.rTypeInsight}\``;
@@ -194,8 +194,8 @@ function writeField(field:FieldInfo, buf:BufferWithPtr, className:string):void {
     }
 }
 
-function writeFuncs(g:Map<string, FieldInfo>, buf:BufferWithPtr):void {
-    var content:string;
+function writeFuncs(g: Map<string, FieldInfo>, buf: BufferWithPtr): void {
+    var content: string;
     content = `# 全局函数${EOL2}`;
     buf.w(content);
     for (var [_1, _2] of g) {
@@ -212,7 +212,7 @@ function writeFuncs(g:Map<string, FieldInfo>, buf:BufferWithPtr):void {
     }
 }
 
-function ensureDirExists(dir:string):void {
+function ensureDirExists(dir: string): void {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
     }
@@ -222,7 +222,7 @@ function ensureDirExists(dir:string):void {
  * Recursively removes all files and directories in a path.
  * @param s {String} The absolute path of a file or directory.
  */
-function rmAll(s:string):void {
+function rmAll(s: string): void {
     var stats = fs.statSync(s);
     if (stats.isFile()) {
         fs.unlinkSync(s);
@@ -246,10 +246,10 @@ let mdreg = /\[|\]|\*|_/g;
  * @param s {String}
  * @returns {String}
  */
-function mdescape(s:string):string {
+function mdescape(s: string): string {
     return s.replace(mdreg, "\\$&");
 }
 
-function getAnchor(s:string):string {
+function getAnchor(s: string): string {
     return s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 }

@@ -4,7 +4,7 @@
 import {FieldInfo} from "./FieldInfo";
 
 export interface ClassInfo {
-    name?:string;
-    description?:string;
-    fields?:Map<string, FieldInfo>;
+    name?: string;
+    description?: string;
+    fields?: Map<string, FieldInfo>;
 }

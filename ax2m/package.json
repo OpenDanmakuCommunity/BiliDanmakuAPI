@@ -14,7 +14,8 @@
   "author": "George Wu <uiharu@buaa.edu.cn>",
   "license": "MIT",
   "dependencies": {
-    "xml2js": "^0.4.16",
-    "typescript": "^1.8.10"
+    "chalk": "^1.1.3",
+    "typescript": "^1.8.10",
+    "xml2js": "^0.4.16"
   }
 }

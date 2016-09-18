@@ -8,17 +8,17 @@ import {ModifierStr, ModifierInt} from "./info/Modifier";
 
 export abstract class U {
 
-    static parseBool(s:string):boolean {
+    static parseBool(s: string): boolean {
         return s && s.toLowerCase() === "false";
     }
 
-    static ensureContains<K,V>(map:Map<K,V>, key:K, value:V):void {
+    static ensureContains<K,V>(map: Map<K,V>, key: K, value: V): void {
         if (!map.has(key)) {
             map.set(key, value);
         }
     }
 
-    static readFile(path:string):string {
+    static readFile(path: string): string {
         if (fs.existsSync(path)) {
             return fs.readFileSync(path, "utf-8");
         } else {
@@ -26,10 +26,10 @@ export abstract class U {
         }
     }
 
-    static parseXml(xml:string):any {
+    static parseXml(xml: string): any {
         var ready = false;
-        var o:any;
-        xml2js.parseString(xml, (_:any, v:any) => {
+        var o: any;
+        xml2js.parseString(xml, (_: any, v: any) => {
             o = v;
             ready = true;
         });
@@ -38,7 +38,7 @@ export abstract class U {
         return o;
     }
 
-    static parseModifier(s:string):number {
+    static parseModifier(s: string): number {
         if (!s) {
             return 0;
         }

@@ -8,6 +8,7 @@ import {FieldInfo} from "../info/FieldInfo";
 import {FieldType} from "../info/FieldType";
 import {ArgInfo} from "../info/ArgInfo";
 import {ModifierStr} from "../info/Modifier";
+import * as Chalk from "chalk";
 
 export abstract class FP {
 
@@ -16,7 +17,7 @@ export abstract class FP {
      * @param node {XmlNode}
      * @param g {Map<string, ClassInfo>}
      */
-    static read1(node:XmlNode, g:Map<string, ClassInfo>):void {
+    static read1(node: XmlNode, g: Map<string, ClassInfo>): void {
         var completionLists = node["completion-lists"]["list"];
         for (var j = 0; j < completionLists.length; ++j) {
             for (var i = 0; i < completionLists[j]["item"].length; ++i) {
@@ -32,15 +33,15 @@ export abstract class FP {
      * @param node {XmlNode}
      * @param g {Map<string, ClassInfo>}
      */
-    static read2(node:XmlNode, g:Map<string, ClassInfo>):void {
+    static read2(node: XmlNode, g: Map<string, ClassInfo>): void {
         var completionLists = node["completion-lists"]["list"];
         for (var j = 0; j < completionLists.length; ++j) {
             var list = completionLists[j];
             var listName = <string>list.$["name"];
             var membersStatic = U.parseBool(<string>list.$["static"]);
-            var clazz:ClassInfo;
+            var clazz: ClassInfo;
             if (!g.has(listName)) {
-                console.warn(`WARN: class "${listName}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} class "${Chalk.magenta(listName)}" is not found, creating.`);
                 clazz = createClass(listName, "ERR: NO CLASS DESC");
                 g.set(clazz.name, clazz);
             } else {
@@ -65,21 +66,21 @@ export abstract class FP {
      * @param node {XmlNode}
      * @param g {Map<string, ClassInfo>}
      */
-    static readInsights(node:XmlNode, g:Map<string, ClassInfo>):void {
+    static readInsights(node: XmlNode, g: Map<string, ClassInfo>): void {
         var memberFields = node["insight"]["f"];
         for (var i = 0; i < memberFields.length; ++i) {
             var fieldNode = memberFields[i];
             var mfSourceSpace = fieldNode.$["source"].indexOf(" ");
-            var mfSource:string;
+            var mfSource: string;
             if (mfSourceSpace >= 0) {
                 mfSource = fieldNode.$["source"].substring(0, mfSourceSpace);
             } else {
                 mfSource = fieldNode.$["source"];
             }
 
-            var clazz:ClassInfo;
+            var clazz: ClassInfo;
             if (!g.has(mfSource)) {
-                console.warn(`WARN: class "${mfSource}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} class "${Chalk.magenta(mfSource)}" is not found, creating.`);
                 clazz = createClass(mfSource, "ERR: NO CLASS DESC");
                 g.set(clazz.name, clazz);
             } else {
@@ -87,9 +88,9 @@ export abstract class FP {
             }
 
             var mfMember = fieldNode.$["name"].substring(mfSource.length + 1);
-            var member:FieldInfo;
+            var member: FieldInfo;
             if (!clazz.fields.has(mfMember)) {
-                console.warn(`ERR: Member "${mfMember}" of class "${mfSource}" is not found, creating.`);
+                console.log(`${Chalk.yellow("WARN:")} Member "${Chalk.cyan(mfMember)}" of class "${Chalk.magenta(mfSource)}" is not found, creating.`);
                 member = createField(
                     mfMember,
                     "ERR: NO COMP DESC",
@@ -129,7 +130,7 @@ export abstract class FP {
      * @param node {XmlNode}
      * @param g {Map<string, FieldInfo>}
      */
-    static readInsightsG(node:XmlNode, g:Map<string, FieldInfo>):void {
+    static readInsightsG(node: XmlNode, g: Map<string, FieldInfo>): void {
         var funcList = node["insight"]["f"];
         for (var i = 0; i < funcList.length; ++i) {
             var funcNode = funcList[i];
@@ -160,7 +161,7 @@ export abstract class FP {
 
 }
 
-function createClass(name:string, description?:string):ClassInfo {
+function createClass(name: string, description?: string): ClassInfo {
     return <ClassInfo>{
         name: name,
         description: typeof description !== "undefined" ? description : null,
@@ -168,7 +169,7 @@ function createClass(name:string, description?:string):ClassInfo {
     };
 }
 
-function createField(name:string, description:string, fieldType:string, returnType:string, isStatic:boolean):FieldInfo {
+function createField(name: string, description: string, fieldType: string, returnType: string, isStatic: boolean): FieldInfo {
     return <FieldInfo>{
         name: name,
         descComp: description,
@@ -178,7 +179,7 @@ function createField(name:string, description:string, fieldType:string, returnTy
     };
 }
 
-function createArg(name:string, type:string, description:string):ArgInfo {
+function createArg(name: string, type: string, description: string): ArgInfo {
     return <ArgInfo>{
         name: name,
         type: type,

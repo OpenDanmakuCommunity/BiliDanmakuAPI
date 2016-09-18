@@ -5,5 +5,5 @@
 import {NodeBase} from "./NodeBase";
 
 export interface XmlNode extends NodeBase<XmlNode> {
-    $?:NodeBase<XmlNode>;
+    $?: NodeBase<XmlNode>;
 }

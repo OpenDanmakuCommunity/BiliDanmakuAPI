@@ -16,7 +16,7 @@ main(process.argv.slice(1));
 process.exit();
 
 // Args[0] = <script>
-function main(args:string[]):void {
+function main(args: string[]): void {
     var classes = readClassesXml();
     var funcs = readGlobalFuncXml();
     GP.filter(classes, funcs);
@@ -26,8 +26,8 @@ function main(args:string[]):void {
     GP.gen(classes, funcs, "../../docs");
 }
 
-function readClassesXml():Map<string, ClassInfo> {
-    var xml:string;
+function readClassesXml(): Map<string, ClassInfo> {
+    var xml: string;
     var classes = new Map();
     xml = U.readFile("data/comp-classes.xml");
     if (xml) {
@@ -58,8 +58,8 @@ function readClassesXml():Map<string, ClassInfo> {
     return classes;
 }
 
-function readGlobalFuncXml():Map<string, FieldInfo> {
-    var xml:string;
+function readGlobalFuncXml(): Map<string, FieldInfo> {
+    var xml: string;
     var funcs = new Map();
     xml = U.readFile("data/insights-js.xml");
     if (xml) {
