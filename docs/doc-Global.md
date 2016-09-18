@@ -2,9 +2,9 @@
 
 *Global class*
 
-- [Global.\_()](#Global._)
-- [Global.\_get()](#Global._get)
-- [Global.\_set()](#Global._set)
+- [Global.\_()](#global)
+- [Global.\_get()](#globalget)
+- [Global.\_set()](#globalset)
 
 ## Global.\_()
 

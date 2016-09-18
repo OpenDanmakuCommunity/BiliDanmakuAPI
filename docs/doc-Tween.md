@@ -2,16 +2,16 @@
 
 *Tween class*
 
-- [Tween.bezier()](#Tween.bezier)
-- [Tween.delay()](#Tween.delay)
-- [Tween.parallel()](#Tween.parallel)
-- [Tween.serial()](#Tween.serial)
-- [Tween.slice()](#Tween.slice)
-- [Tween.repeat()](#Tween.repeat)
-- [Tween.reverse()](#Tween.reverse)
-- [Tween.to()](#Tween.to)
-- [Tween.tween()](#Tween.tween)
-- [Tween.scale()](#Tween.scale)
+- [Tween.bezier()](#tweenbezier)
+- [Tween.delay()](#tweendelay)
+- [Tween.parallel()](#tweenparallel)
+- [Tween.serial()](#tweenserial)
+- [Tween.slice()](#tweenslice)
+- [Tween.repeat()](#tweenrepeat)
+- [Tween.reverse()](#tweenreverse)
+- [Tween.to()](#tweento)
+- [Tween.tween()](#tweentween)
+- [Tween.scale()](#tweenscale)
 
 ## Tween.bezier()
 

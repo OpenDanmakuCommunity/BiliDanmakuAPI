@@ -2,10 +2,10 @@
 
 *Storage class (load('storage') first*
 
-- [Storage.loadData()](#Storage.loadData)
-- [Storage.loadRank()](#Storage.loadRank)
-- [Storage.saveData()](#Storage.saveData)
-- [Storage.uploadScore()](#Storage.uploadScore)
+- [Storage.loadData()](#storageloaddata)
+- [Storage.loadRank()](#storageloadrank)
+- [Storage.saveData()](#storagesavedata)
+- [Storage.uploadScore()](#storageuploadscore)
 
 ## Storage.loadData()
 

@@ -97,7 +97,8 @@ function writeClass(clazz:ClassInfo, buf:BufferWithPtr):void {
     for (var [_1, _2] of clazz.fields) {
         var field = <FieldInfo>_2;
         var contentBase = `${clazz.name}.${field.name}`;
-        content = `- [${mdescape(contentBase) + (field.fieldType === FieldType.Function ? "()" : "")}](#${contentBase})`;
+        var anchor = getAnchor(contentBase);
+        content = `- [${mdescape(contentBase) + (field.fieldType === FieldType.Function ? "()" : "")}](#${anchor})`;
         buf.w(`${content}${EOL}`);
     }
     buf.w(EOL);
@@ -199,8 +200,9 @@ function writeFuncs(g:Map<string, FieldInfo>, buf:BufferWithPtr):void {
     buf.w(content);
     for (var [_1, _2] of g) {
         var func = <FieldInfo>_2;
-        var contentBase = `${func.name}`;
-        content = `- [${mdescape(contentBase) + (func.fieldType === FieldType.Function ? "()" : "")}](#${contentBase})`;
+        var contentBase = func.name;
+        var anchor = getAnchor(contentBase);
+        content = `- [${mdescape(contentBase) + (func.fieldType === FieldType.Function ? "()" : "")}](#${anchor})`;
         buf.w(`${content}${EOL}`);
     }
     buf.w(EOL);
@@ -246,4 +248,8 @@ let mdreg = /\[|\]|\*|_/g;
  */
 function mdescape(s:string):string {
     return s.replace(mdreg, "\\$&");
+}
+
+function getAnchor(s:string):string {
+    return s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 }

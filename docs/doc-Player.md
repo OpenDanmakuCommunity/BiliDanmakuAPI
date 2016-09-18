@@ -2,22 +2,22 @@
 
 *Player class*
 
-- [Player.commentList](#Player.commentList)
-- [Player.commentTrigger()](#Player.commentTrigger)
-- [Player.createSound()](#Player.createSound)
-- [Player.height](#Player.height)
-- [Player.jump()](#Player.jump)
-- [Player.keyTrigger()](#Player.keyTrigger)
-- [Player.pause()](#Player.pause)
-- [Player.play()](#Player.play)
-- [Player.refreshRate](#Player.refreshRate)
-- [Player.seek()](#Player.seek)
-- [Player.setMask()](#Player.setMask)
-- [Player.state](#Player.state)
-- [Player.time](#Player.time)
-- [Player.videoHeight](#Player.videoHeight)
-- [Player.videoWidth](#Player.videoWidth)
-- [Player.width](#Player.width)
+- [Player.commentList](#playercommentlist)
+- [Player.commentTrigger()](#playercommenttrigger)
+- [Player.createSound()](#playercreatesound)
+- [Player.height](#playerheight)
+- [Player.jump()](#playerjump)
+- [Player.keyTrigger()](#playerkeytrigger)
+- [Player.pause()](#playerpause)
+- [Player.play()](#playerplay)
+- [Player.refreshRate](#playerrefreshrate)
+- [Player.seek()](#playerseek)
+- [Player.setMask()](#playersetmask)
+- [Player.state](#playerstate)
+- [Player.time](#playertime)
+- [Player.videoHeight](#playervideoheight)
+- [Player.videoWidth](#playervideowidth)
+- [Player.width](#playerwidth)
 
 ## Player.commentList
 

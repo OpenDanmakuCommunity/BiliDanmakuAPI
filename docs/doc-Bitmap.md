@@ -2,9 +2,9 @@
 
 *Bitmap class (load('bitmap') first)*
 
-- [Bitmap.createBitmap()](#Bitmap.createBitmap)
-- [Bitmap.createBitmapData()](#Bitmap.createBitmapData)
-- [Bitmap.createRectangle()](#Bitmap.createRectangle)
+- [Bitmap.createBitmap()](#bitmapcreatebitmap)
+- [Bitmap.createBitmapData()](#bitmapcreatebitmapdata)
+- [Bitmap.createRectangle()](#bitmapcreaterectangle)
 
 ## Bitmap.createBitmap()
 

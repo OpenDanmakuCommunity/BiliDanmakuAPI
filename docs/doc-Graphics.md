@@ -2,19 +2,19 @@
 
 *ERR: NO CLASS DESC*
 
-- [Graphics.beginFill()](#Graphics.beginFill)
-- [Graphics.beginGradientFill()](#Graphics.beginGradientFill)
-- [Graphics.clear()](#Graphics.clear)
-- [Graphics.curveTo()](#Graphics.curveTo)
-- [Graphics.drawCircle()](#Graphics.drawCircle)
-- [Graphics.drawEllipse()](#Graphics.drawEllipse)
-- [Graphics.drawRect()](#Graphics.drawRect)
-- [Graphics.drawRoundRect()](#Graphics.drawRoundRect)
-- [Graphics.endFill()](#Graphics.endFill)
-- [Graphics.lineGradientStyle()](#Graphics.lineGradientStyle)
-- [Graphics.lineStyle()](#Graphics.lineStyle)
-- [Graphics.lineTo()](#Graphics.lineTo)
-- [Graphics.moveTo()](#Graphics.moveTo)
+- [Graphics.beginFill()](#graphicsbeginfill)
+- [Graphics.beginGradientFill()](#graphicsbegingradientfill)
+- [Graphics.clear()](#graphicsclear)
+- [Graphics.curveTo()](#graphicscurveto)
+- [Graphics.drawCircle()](#graphicsdrawcircle)
+- [Graphics.drawEllipse()](#graphicsdrawellipse)
+- [Graphics.drawRect()](#graphicsdrawrect)
+- [Graphics.drawRoundRect()](#graphicsdrawroundrect)
+- [Graphics.endFill()](#graphicsendfill)
+- [Graphics.lineGradientStyle()](#graphicslinegradientstyle)
+- [Graphics.lineStyle()](#graphicslinestyle)
+- [Graphics.lineTo()](#graphicslineto)
+- [Graphics.moveTo()](#graphicsmoveto)
 
 ## Graphics.beginFill()
 

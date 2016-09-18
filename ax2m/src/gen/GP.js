@@ -69,7 +69,8 @@ function writeClass(clazz, buf) {
     for (var [_1, _2] of clazz.fields) {
         var field = _2;
         var contentBase = `${clazz.name}.${field.name}`;
-        content = `- [${mdescape(contentBase) + (field.fieldType === FieldType_1.FieldType.Function ? "()" : "")}](#${contentBase})`;
+        var anchor = getAnchor(contentBase);
+        content = `- [${mdescape(contentBase) + (field.fieldType === FieldType_1.FieldType.Function ? "()" : "")}](#${anchor})`;
         buf.w(`${content}${EOL}`);
     }
     buf.w(EOL);
@@ -171,8 +172,9 @@ function writeFuncs(g, buf) {
     buf.w(content);
     for (var [_1, _2] of g) {
         var func = _2;
-        var contentBase = `${func.name}`;
-        content = `- [${mdescape(contentBase) + (func.fieldType === FieldType_1.FieldType.Function ? "()" : "")}](#${contentBase})`;
+        var contentBase = func.name;
+        var anchor = getAnchor(contentBase);
+        content = `- [${mdescape(contentBase) + (func.fieldType === FieldType_1.FieldType.Function ? "()" : "")}](#${anchor})`;
         buf.w(`${content}${EOL}`);
     }
     buf.w(EOL);
@@ -207,5 +209,8 @@ function rmAll(s) {
 let mdreg = /\[|\]|\*|_/g;
 function mdescape(s) {
     return s.replace(mdreg, "\\$&");
+}
+function getAnchor(s) {
+    return s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
 }
 //# sourceMappingURL=GP.js.map

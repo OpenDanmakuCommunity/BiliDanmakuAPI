@@ -2,7 +2,7 @@
 
 *ERR: NO CLASS DESC*
 
-- [Timer.stop()](#Timer.stop)
+- [Timer.stop()](#timerstop)
 
 ## Timer.stop()
 

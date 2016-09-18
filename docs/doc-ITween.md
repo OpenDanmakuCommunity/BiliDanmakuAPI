@@ -2,12 +2,12 @@
 
 *ERR: NO CLASS DESC*
 
-- [ITween.gotoAndPlay()](#ITween.gotoAndPlay)
-- [ITween.gotoAndStop()](#ITween.gotoAndStop)
-- [ITween.play()](#ITween.play)
-- [ITween.stop()](#ITween.stop)
-- [ITween.togglePause()](#ITween.togglePause)
-- [ITween.stopOnComplete](#ITween.stopOnComplete)
+- [ITween.gotoAndPlay()](#itweengotoandplay)
+- [ITween.gotoAndStop()](#itweengotoandstop)
+- [ITween.play()](#itweenplay)
+- [ITween.stop()](#itweenstop)
+- [ITween.togglePause()](#itweentogglepause)
+- [ITween.stopOnComplete](#itweenstoponcomplete)
 
 ## ITween.gotoAndPlay()
 

@@ -2,12 +2,12 @@
 
 *ERR: NO CLASS DESC*
 
-- [CommentData.color](#CommentData.color)
-- [CommentData.fontSize](#CommentData.fontSize)
-- [CommentData.mode](#CommentData.mode)
-- [CommentData.pool](#CommentData.pool)
-- [CommentData.time](#CommentData.time)
-- [CommentData.txt](#CommentData.txt)
+- [CommentData.color](#commentdatacolor)
+- [CommentData.fontSize](#commentdatafontsize)
+- [CommentData.mode](#commentdatamode)
+- [CommentData.pool](#commentdatapool)
+- [CommentData.time](#commentdatatime)
+- [CommentData.txt](#commentdatatxt)
 
 ## CommentData.color
 

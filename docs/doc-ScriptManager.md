@@ -2,10 +2,10 @@
 
 *ScriptManager class*
 
-- [ScriptManager.clearTimer()](#ScriptManager.clearTimer)
-- [ScriptManager.clearEl()](#ScriptManager.clearEl)
-- [ScriptManager.clearTrigger()](#ScriptManager.clearTrigger)
-- [ScriptManager.ClearEl()](#ScriptManager.ClearEl)
+- [ScriptManager.clearTimer()](#scriptmanagercleartimer)
+- [ScriptManager.clearEl()](#scriptmanagerclearel)
+- [ScriptManager.clearTrigger()](#scriptmanagercleartrigger)
+- [ScriptManager.ClearEl()](#scriptmanagerclearel)
 
 ## ScriptManager.clearTimer()
 

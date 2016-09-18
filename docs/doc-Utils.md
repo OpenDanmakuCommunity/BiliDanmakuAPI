@@ -2,13 +2,13 @@
 
 *Utils class*
 
-- [Utils.delay()](#Utils.delay)
-- [Utils.distance()](#Utils.distance)
-- [Utils.formatTimes()](#Utils.formatTimes)
-- [Utils.hue()](#Utils.hue)
-- [Utils.interval()](#Utils.interval)
-- [Utils.rand()](#Utils.rand)
-- [Utils.rgb()](#Utils.rgb)
+- [Utils.delay()](#utilsdelay)
+- [Utils.distance()](#utilsdistance)
+- [Utils.formatTimes()](#utilsformattimes)
+- [Utils.hue()](#utilshue)
+- [Utils.interval()](#utilsinterval)
+- [Utils.rand()](#utilsrand)
+- [Utils.rgb()](#utilsrgb)
 
 ## Utils.delay()
 

@@ -2,8 +2,8 @@
 
 - [trace()](#trace)
 - [clear()](#clear)
-- [parseInt()](#parseInt)
-- [parseFloat()](#parseFloat)
+- [parseInt()](#parseint)
+- [parseFloat()](#parsefloat)
 - [timer()](#timer)
 - [interval()](#interval)
 - [foreach()](#foreach)
